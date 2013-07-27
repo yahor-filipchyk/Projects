@@ -1,19 +1,14 @@
-
 package my.yahorfilipchyk.digits;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import my.yahorfilipchyk.console.Console;
 
 /**
  *
- * @author Yahor Filipchyk  
- * Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number.
+ * @author Yahor Filipchyk Enter a number and have the program generate the
+ * Fibonacci sequence to that number or to the Nth number.
  */
 public class Fibonacci {
-    
+
     public static long[] fibSequence(int n) {
         long sequence[] = new long[n];
         if (n > 0) {
@@ -33,19 +28,14 @@ public class Fibonacci {
         }
         return sequence;
     }
-    
+
     public static void main(String args[]) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try {        
-            String number = reader.readLine();
-            int n = Integer.parseInt(number);
-            long sequence[] = fibSequence(100);
-            for (int i = 0; i < sequence.length; i++) {
-                System.out.print(sequence[i] + ", ");
-            }
-            System.out.println();
-        } catch (IOException ex) {
-            Logger.getLogger(Fibonacci.class.getName()).log(Level.SEVERE, null, ex);
+        String number = Console.readLine();
+        int n = Integer.parseInt(number);
+        long sequence[] = fibSequence(100);
+        for (int i = 0; i < sequence.length; i++) {
+            System.out.print(sequence[i] + ", ");
         }
+        System.out.println();
     }
 }
